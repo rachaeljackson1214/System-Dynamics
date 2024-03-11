@@ -1,0 +1,11 @@
+numerator = 152.38;
+denominator = [1, 3.49, 19.05];
+sys = tf(numerator, denominator);
+%stepinfo(sys);
+t = 0:0.01:9;
+u = ones(size(t));
+y = lsim(sys, u, t);
+plot(t,y);
+title('Unit-Step Response of P(s) v Time ');
+xlabel('Time in sec');
+ylabel('P(s)');
